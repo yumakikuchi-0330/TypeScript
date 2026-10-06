@@ -1,14 +1,13 @@
 // No1(Partial型の利用)任意にした型の作成に修正
 interface User {
-    name?: string;
-    age?: number;
-    email?: string;
+    name: string;
+    age: number;
+    email: string;
 }
 
 const user: Partial<User> = {
     name: "Alice"
 };
-console.log(user);
 
 
 // No2(Required型の利用)
@@ -18,9 +17,7 @@ interface Profile {
     age?: number;
 }
 
-type Require = Required<Profile>;
-
-const Taro: Require = {
+const Taro: Required<Profile> = {
     firstName: "Taro",
     lastName: "Yamada",
     age: 20
@@ -35,9 +32,7 @@ interface Book {
     published: number;
 }
 
-type ReadonlyBook = Readonly<Book>;
-
-const book: ReadonlyBook = {
+const book: Readonly<Book> = {
     title: "掃除",
     author: "山田太郎",
     published: 10
