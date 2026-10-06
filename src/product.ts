@@ -1,8 +1,8 @@
-// No1(Partial型の利用)
+// No1(Partial型の利用)任意にした型の作成に修正
 interface User {
-    name: string;
-    age: number;
-    email: string;
+    name?: string;
+    age?: number;
+    email?: string;
 }
 
 const user: Partial<User> = {
@@ -18,11 +18,15 @@ interface Profile {
     age?: number;
 }
 
-const Taro: Required<Profile> = {
+type Require = Required<Profile>;
+
+const Taro: Require = {
     firstName: "Taro",
     lastName: "Yamada",
     age: 20
 };
+
+
 
 // No3(Readonly型の利用)
 interface Book {
@@ -31,7 +35,9 @@ interface Book {
     published: number;
 }
 
-const book: Readonly<Book> = {
+type ReadonlyBook = Readonly<Book>;
+
+const book: ReadonlyBook = {
     title: "掃除",
     author: "山田太郎",
     published: 10
@@ -80,12 +86,15 @@ const view: Employeeview ={
 }
 
 // No7(ReturnType型の利用)
-function getUser() {
+type ReturnTypeUser = {
+    id: number,
+    name: string
+    age: number
+};
+function getUser() : ReturnTypeUser{
     return {
         id: 1,
         name: "Alice",
         age: 25
     };
 }
-
-type  backUser = ReturnType<typeof getUser>;
