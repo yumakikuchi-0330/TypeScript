@@ -9,10 +9,10 @@ const names: string[] = ["Alice", "Bob", "Charlie"];
 
 // No4（オブジェクト型）
 type User ={
-    name:string;
-    age:number;
+    name: string;
+    age: number;
 };
-const user:User = {
+const user: User = {
     name: "Taro",
     age: 30
 };
@@ -23,7 +23,7 @@ value = "Hello";
 value = 42;
 
 // No6(関数の型）
-function add(x:number , y:number ):number{
+function add(x: number , y: number ): number{
 return x + y;
 }
 
@@ -36,8 +36,8 @@ interface person  {
 
 // No8(型エイリアスの利用)
 type NumberArray = {
-    id:number;
-    age:number;
+    id: number;
+    age: number;
 }
 
 const numberArray: NumberArray = {
@@ -46,14 +46,14 @@ const numberArray: NumberArray = {
 };
 
 // No9(型推論の確認)
-const count:number = 10;
+const count: number = 10;
 const isActive: boolean = true;
-const message:string = "Welcome!";
+const message: string = "Welcome!";
 
 // No10(Optionalプロパティ)
 interface UserProfile{
     name: string;
-    age?:number;
+    age?: number;
 }
 
 const user1: UserProfile = {
@@ -71,7 +71,7 @@ type StringOrNumber = {
     id: number;
 };
 
-const display:StringOrNumber = {
+const display: StringOrNumber = {
     text: "こんにちは",
     id: 123
 };
